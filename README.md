@@ -50,4 +50,4 @@ rd.close();
 ```
 
 ### Tunnel Apache Http Client, JSoup and Selenium FirefoxDriver
-Have a look at the [examples](https://github.com/al-eax/tor_controler/tree/master/examples)   
+Have a look at these [examples](https://github.com/al-eax/torcontroller/tree/master/examples)   
