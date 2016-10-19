@@ -1,0 +1,47 @@
+# TorControler
+Simple project to tunnel your connections through tor network.
+
+__find tor executable:__
+Download and extract tor from [this link](https://www.torproject.org/projects/torbrowser.html.en) to a direcroty.
+__Linux__ users should find the tor executable here: `tor-browser_en-US/Browser/TorBrowser/Tor/tor`.
+__Windows__ users should find it here: `Tor Browser\Browser\TorBrowser\Tor\tor.exe`
+
+## Examples
+The class `TorController` has basicly three methods:
+1. `startUp()` to start a tor process open a connection to the control server
+2. `changeIdentity()` to change your identity (ip)
+3. `shutDown()` to close the connected to the control server and terminate the tor process
+
+### Minimal example
+```java
+String executable = "tor-browser_en-US/Browser/TorBrowser/Tor/tor";
+TorControler tor = new TorControler(executable);
+if(tor.startUp()){
+  //...
+  if(tor.changeIdentity()){
+    //...
+  }
+  if(tor.shutDown()){
+    //...
+  }
+}
+```
+
+### Tunnel UrlConnection
+```java
+String url = "http://api.ipify.org/?format=text";
+TorControler tor = new TorControler(...);
+SocketAddress proxyAddr = new InetSocketAddress("127.0.0.1", tor.getSocksPort());
+Proxy proxy = new Proxy(Proxy.Type.SOCKS, proxyAddr);
+URLConnection connection = new URL(url).openConnection(proxy);
+BufferedReader rd = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+
+String line;
+while ((line = rd.readLine()) != null) {
+  System.out.println(line);
+}
+rd.close();
+```
+
+### Tunnel Apache Http Client, JSoup and Selenium FirefoxDriver
+Have a look at the [examples](https://github.com/al-eax/tor_controler/tree/master/examples)   
