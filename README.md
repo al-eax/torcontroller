@@ -1,4 +1,4 @@
-# TorControler
+# TorController
 Simple project to tunnel your connections through tor network.
 
 __find tor executable:__
@@ -15,7 +15,7 @@ The class `TorController` has basicly three methods:
 ### Minimal example
 ```java
 String executable = "tor-browser_en-US/Browser/TorBrowser/Tor/tor";
-TorControler tor = new TorControler(executable);
+TorController tor = new TorController(executable);
 if(tor.startUp()){
   //...
   if(tor.changeIdentity()){
@@ -30,7 +30,7 @@ if(tor.startUp()){
 ### Tunnel UrlConnection
 ```java
 String url = "http://api.ipify.org/?format=text";
-TorControler tor = new TorControler(...);
+TorController tor = new TorController(...);
 SocketAddress proxyAddr = new InetSocketAddress("127.0.0.1", tor.getSocksPort());
 Proxy proxy = new Proxy(Proxy.Type.SOCKS, proxyAddr);
 URLConnection connection = new URL(url).openConnection(proxy);
