@@ -2,14 +2,19 @@
 Simple project to tunnel your connections through tor network.
 
 __find tor executable:__
+
 Download and extract tor from [this link](https://www.torproject.org/projects/torbrowser.html.en) to a direcroty.
 __Linux__ users should find the tor executable here: `tor-browser_en-US/Browser/TorBrowser/Tor/tor`.
+
 __Windows__ users should find it here: `Tor Browser\Browser\TorBrowser\Tor\tor.exe`
 
 ## Examples
 The class `TorController` has basicly three methods:
+
 1. `startUp()` to start a tor process open a connection to the control server
+
 2. `changeIdentity()` to change your identity (ip)
+
 3. `shutDown()` to close the connected to the control server and terminate the tor process
 
 ### Minimal example
