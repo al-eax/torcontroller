@@ -4,6 +4,7 @@ Simple project to tunnel your connections through tor network.
 __find tor executable:__
 
 Download and extract tor from [this link](https://www.torproject.org/projects/torbrowser.html.en) to a direcroty.
+
 __Linux__ users should find the tor executable here: `tor-browser_en-US/Browser/TorBrowser/Tor/tor`.
 
 __Windows__ users should find it here: `Tor Browser\Browser\TorBrowser\Tor\tor.exe`
