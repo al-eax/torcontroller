@@ -10,13 +10,13 @@ __Linux__ users should find the tor executable here: `tor-browser_en-US/Browser/
 __Windows__ users should find it here: `Tor Browser\Browser\TorBrowser\Tor\tor.exe`
 
 ## Examples
-The class `TorController` has basicly three methods:
+The class `TorController` has three simple methods:
 
-1. `startUp()` to start a tor process open a connection to the control server
+1. `startUp()` to start a tor process and connect to the control server
 
 2. `changeIdentity()` to change your identity (ip)
 
-3. `shutDown()` to close the connected to the control server and terminate the tor process
+3. `shutDown()` to disconnect from control server and terminate the tor process
 
 ### Minimal example
 ```java
