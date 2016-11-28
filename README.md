@@ -1,4 +1,5 @@
 # TorController
+
 Simple project to tunnel your connections through tor network.
 
 ### Find tor executable
@@ -52,4 +53,18 @@ rd.close();
 ```
 
 ### Tunnel Apache Http Client, JSoup or Selenium FirefoxDriver
-Have a look at these [examples](https://github.com/al-eax/torcontroller/tree/master/examples)   
+
+Have a look at these [examples](https://github.com/al-eax/torcontroller/tree/master/examples)
+
+### Set password and ports
+
+The TorController uses 9150 and 9151 as default ports for socks and controll server. Set them in constructor if you want.
+You can also specify a password to protect your local tor control server from other connections:
+
+```java
+int socks_port = 1337;
+int control_port = 1338
+String path = ".../tor-browser_en-US/Browser/TorBrowser/Tor/tor";
+TorController tor = new TorController(path,socks_port,control_port);
+tor.setPassword("Mb2.r5oHf-0t".toCharArray());
+```
