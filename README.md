@@ -1,16 +1,16 @@
 # TorController
 Simple project to tunnel your connections through tor network.
 
-__find tor executable:__
+### Find tor executable
 
-Download and extract tor from [this link](https://www.torproject.org/projects/torbrowser.html.en) to a direcroty.
+Download and extract tor from [here](https://www.torproject.org/projects/torbrowser.html.en).
 
-__Linux__ users should find the tor executable here: `tor-browser_en-US/Browser/TorBrowser/Tor/tor`.
+__Linux__ executable should be here: `tor-browser_en-US/Browser/TorBrowser/Tor/tor`.
 
-__Windows__ users should find it here: `Tor Browser\Browser\TorBrowser\Tor\tor.exe`
+__Windows__ executable should be here: `Tor Browser\Browser\TorBrowser\Tor\tor.exe`
 
 ## Examples
-The class `TorController` has three simple methods:
+The `TorController` has three simple methods:
 
 1. `startUp()` to start a tor process and connect to the control server
 
@@ -19,6 +19,7 @@ The class `TorController` has three simple methods:
 3. `shutDown()` to disconnect from control server and terminate the tor process
 
 ### Minimal example
+
 ```java
 String executable = "tor-browser_en-US/Browser/TorBrowser/Tor/tor";
 TorController tor = new TorController(executable);
@@ -34,6 +35,7 @@ if(tor.startUp()){
 ```
 
 ### Tunnel UrlConnection
+
 ```java
 String url = "http://api.ipify.org/?format=text";
 TorController tor = new TorController(...);
@@ -49,5 +51,5 @@ while ((line = rd.readLine()) != null) {
 rd.close();
 ```
 
-### Tunnel Apache Http Client, JSoup and Selenium FirefoxDriver
+### Tunnel Apache Http Client, JSoup or Selenium FirefoxDriver
 Have a look at these [examples](https://github.com/al-eax/torcontroller/tree/master/examples)   
