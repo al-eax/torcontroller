@@ -40,6 +40,7 @@ if(tor.startUp()){
 ```java
 String url = "http://api.ipify.org/?format=text";
 TorController tor = new TorController(...);
+tor.startUp()
 SocketAddress proxyAddr = new InetSocketAddress("127.0.0.1", tor.getSocksPort());
 Proxy proxy = new Proxy(Proxy.Type.SOCKS, proxyAddr);
 URLConnection connection = new URL(url).openConnection(proxy);
@@ -59,7 +60,7 @@ Have a look at these [examples](https://github.com/al-eax/torcontroller/tree/mas
 ### Set password and ports
 
 The TorController uses 9150 and 9151 as default ports for socks and controll server. Set them in constructor if you want.
-You can also specify a password to protect your local tor control server from other connections:
+You can also specify a password to protect your local tor control server from other connections. Make sure your set the password before you start the TorController:
 
 ```java
 int socks_port = 1337;
@@ -67,4 +68,5 @@ int control_port = 1338
 String path = ".../tor-browser_en-US/Browser/TorBrowser/Tor/tor";
 TorController tor = new TorController(path,socks_port,control_port);
 tor.setPassword("Mb2.r5oHf-0t".toCharArray());
+tor.startUp()
 ```
